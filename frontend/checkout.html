@@ -27,15 +27,15 @@
       <div class="header__top">
         <div class="header__container container">
           <div class="header__contact">
-            <span>(+01) - 2345 - 6789</span>
+            <span>(+91) -  1860 267 6161</span>
             <span>Our location</span>
           </div>
           <p class="header__alert-news">
             Super Values Deals - Save more coupons
           </p>
-          <a href="login-register.html" class="header__top-action">
-            Log In / Sign Up
-          </a>
+          <a href="login-register.html" class="header__top-action" id="topAuthLink">
+    Log In / Sign Up
+</a>
         </div>
       </div>
 
@@ -62,9 +62,9 @@
               <a href="compare.html" class="nav__link">Compare</a>
             </li>
             <li class="nav__item">
-              <a href="login-register.html" class="nav__link active-link"
-                >Login</a
-              >
+              <a href="login-register.html" class="nav__link" id="navAuthLink">
+    Login
+</a>
             </li>
           </ul>
           <div class="header__search">
@@ -85,7 +85,7 @@
           </a>
           <a href="cart.html" class="header__action-btn" title="Cart">
             <img src="assets/img/icon-cart.svg" alt="" />
-            <span class="count">3</span>
+            <span class="count" id="cartCount">0</span>
           </a>
         </div>
       </nav>
@@ -109,20 +109,27 @@
         <div class="checkout__container container grid">
           <div class="checkout__group">
             <h3 class="section__title">Billing Details</h3>
-            <form class="form grid">
-              <input type="text" placeholder="Name" class="form__input" />
-              <input type="text" placeholder="Address" class="form__input" />
-              <input type="text" placeholder="City" class="form__input" />
-              <input type="text" placeholder="Country" class="form__input" />
-              <input type="text" placeholder="Postcode" class="form__input" />
-              <input type="text" placeholder="Phone" class="form__input" />
-              <input type="email" placeholder="Email" class="form__input" />
+            <form class="form grid" id="checkoutForm">
+              <input type="text" id="checkoutName" placeholder="Name" class="form__input" />
+
+              <input type="text" id="checkoutAddress" placeholder="Address" class="form__input" />
+
+              <input type="text" id="checkoutCity" placeholder="City" class="form__input" />
+
+              <input type="text" id="checkoutCountry" placeholder="Country" class="form__input" />
+
+              <input type="text" id="checkoutPostcode" placeholder="Postcode" class="form__input" />
+
+              <input type="text" id="checkoutPhone" placeholder="Phone" class="form__input" />
+
+              <input type="email" id="checkoutEmail" placeholder="Email" class="form__input" />
+
               <h3 class="checkout__title">Additional Information</h3>
               <textarea
-                name=""
-                placeholder="order note"
+                id="orderNote"
+                placeholder="Order Note"
                 class="form__input textarea"
-              ></textarea>
+                ></textarea>
             </form>
           </div>
           <div class="checkout__group">
@@ -135,65 +142,8 @@
                 </tr>
               </thead>
 
-              <tbody>
-                <tr>
-                  <td>
-                    <img
-                      src="./assets/img/product-1-2.jpg"
-                      alt=""
-                      class="order__img"
-                    />
-                  </td>
-                  <td>
-                    <h3 class="table__title">Yidarton Women Summer Blue</h3>
-                    <p class="table__quantity">x 2</p>
-                  </td>
-                  <td><span class="table__price">$180.00</span></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="./assets/img/product-2-1.jpg"
-                      alt=""
-                      class="order__img"
-                    />
-                  </td>
-                  <td>
-                    <h3 class="table__title">LDB Moon Summer</h3>
-                    <p class="table__quantity">x 1</p>
-                  </td>
-                  <td><span class="table__price">$65.00</span></td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="./assets/img/product-7-1.jpg"
-                      alt=""
-                      class="order__img"
-                    />
-                  </td>
-                  <td>
-                    <h3 class="table__title">Women Short Sleeve Loose</h3>
-                    <p class="table__quantity">x 2</p>
-                  </td>
-                  <td><span class="table__price">$35.00</span></td>
-                </tr>
-                <tr>
-                  <td><span class="order__subtitle">Subtotal</span></td>
-                  <td colspan="2"><span class="table__price">$280.00</span></td>
-                </tr>
-                <tr>
-                  <td><span class="order__subtitle">Shipping</span></td>
-                  <td colspan="2">
-                    <span class="table__price">Free Shipping</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="order__subtitle">Total</span></td>
-                  <td colspan="2">
-                    <span class="order__grand-total">$280.00</span>
-                  </td>
-                </tr>
+              <tbody id="checkoutItems">
+
               </tbody>
             </table>
             <div class="payment__methods">
@@ -207,7 +157,7 @@
                   class="payment__input"
                 />
                 <label for="l1" class="payment__label"
-                  >Direct Bank Transfer</label
+                  >Net Banking</label
                 >
               </div>
               <div class="payment__option flex">
@@ -217,7 +167,7 @@
                   id="l2"
                   class="payment__input"
                 />
-                <label for="l2" class="payment__label">Check Payment</label>
+                <label for="l2" class="payment__label">Cash on Delivery</label>
               </div>
               <div class="payment__option flex">
                 <input
@@ -226,10 +176,12 @@
                   id="l3"
                   class="payment__input"
                 />
-                <label for="l3" class="payment__label">Paypal</label>
+                <label for="l3" class="payment__label">UPI</label>
               </div>
             </div>
-            <button class="btn btn--md">Place Order</button>
+            <button class="btn btn--md" id="placeOrderBtn">
+                Place Order
+            </button>
           </div>
         </div>
       </section>
@@ -359,6 +311,9 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!--=============== MAIN JS ===============-->
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/checkout.js"></script>
+    <script src="assets/js/navbar.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

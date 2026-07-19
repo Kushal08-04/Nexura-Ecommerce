@@ -8,33 +8,62 @@ const {
     validateProduct
 } = require("../validators/productValidator");
 
-// IMPORTANT: Specific routes first
-router.get("/featured", productController.getFeaturedProducts);
-router.get("/new-arrivals", productController.getNewArrivals);
-router.get("/deals", productController.getDeals);
-router.get("/best-sellers", productController.getBestSellers);
-router.get("/search", productController.searchProducts);
-router.get("/category/:category", productController.getCategoryProducts);
-router.get("/filter", productController.getProductsAdvanced);
+// ==============================
+// Public Routes
+// ==============================
 
+// Home Page
+router.get("/home", productController.getHomeProducts);
+
+// Featured Products
+router.get("/featured", productController.getFeaturedProducts);
+
+// Deals
+router.get("/deals", productController.getDeals);
+
+// New Arrivals
+router.get("/new-arrivals", productController.getNewArrivals);
+
+// Best Sellers
+router.get("/best-sellers", productController.getBestSellers);
+
+// Search
+router.get("/search", productController.searchProducts);
+
+// Advanced Filter
+router.get("/filter", productController.filterProducts);
+
+// Category
+router.get("/category/:category", productController.getCategoryProducts);
+
+// Get All Products
+router.get("/", productController.getAllProducts);
+
+// Get Product by ID
+router.get("/:id", productController.getProductById);
+
+// ==============================
+// Admin Routes
+// ==============================
+
+// Create Product
 router.post(
     "/",
     validateProduct,
     productController.createProduct
 );
 
+// Update Product
 router.put(
     "/:id",
     validateProduct,
     productController.updateProduct
 );
 
-// Generic routes after
-router.get("/", productController.getAllProducts);
-router.get("/:id", productController.getProductById);
-
-router.post("/", productController.createProduct);
-router.put("/:id", productController.updateProduct);
-router.delete("/:id", productController.deleteProduct);
+// Delete Product
+router.delete(
+    "/:id",
+    productController.deleteProduct
+);
 
 module.exports = router;

@@ -1,112 +1,1704 @@
-const mongoose = require("mongoose");
+module.exports = [
 
-const productSchema = new mongoose.Schema(
 {
-    name:{
-        type:String,
-        required:true,
-        trim:true
-    },
-
-    slug:{
-        type:String,
-        unique:true
-    },
-
-    description:{
-        type:String,
-        required:true
-    },
-
-    shortDescription:{
-        type:String
-    },
-
-    brand:{
-        type:String,
-        default:"Nexura"
-    },
-
-    category:{
-        type:String,
-        required:true
-    },
-
-    subCategory:{
-        type:String,
-        default:""
-    },
-
-    price:{
-        type:Number,
-        required:true
-    },
-
-    discount:{
-        type:Number,
-        default:0
-    },
-
-    finalPrice:{
-        type:Number
-    },
-
-    stock:{
-        type:Number,
-        default:0
-    },
-
-    sku:{
-        type:String
-    },
-
-    thumbnail:{
-        type:String
-    },
-
-    images:[
-        {
-            type:String
-        }
+    name: "Vintage Checkered Shirt",
+    slug: "vintage-checkered-shirt",
+    description: "Classic checkered shirt for casual wear.",
+    shortDescription: "Checkered Shirt",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "Shirts",
+    price: 1599,
+    discount: 10,
+    finalPrice: 1439,
+    stock: 42,
+    sku: "NXR-M004",
+    thumbnail: "product-4-1.jpg",
+    images: [
+        "product-4-1.jpg",
+        "product-4-2.jpg"
     ],
+    rating: 4.7,
+    totalReviews: 108,
+    featured: true,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["checkered","shirt","casual"],
+    isActive: true
+},
 
-    rating:{
-        type:Number,
-        default:0
-    },
+{
+    name: "Urban Street Hoodie",
+    slug: "urban-street-hoodie",
+    description: "Warm fleece hoodie with modern streetwear design.",
+    shortDescription: "Street Hoodie",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "Hoodies",
+    price: 2299,
+    discount: 12,
+    finalPrice: 2023,
+    stock: 38,
+    sku: "NXR-M005",
+    thumbnail: "product-5-1.jpg",
+    images: [
+        "product-5-1.jpg",
+        "product-5-2.jpg"
+    ],
+    rating: 4.8,
+    totalReviews: 132,
+    featured: false,
+    newArrival: false,
+    dealOfTheDay: true,
+    bestSeller: true,
+    tags: ["hoodie","winter","streetwear"],
+    isActive: true
+},
 
-    totalReviews:{
-        type:Number,
-        default:0
-    },
+{
+    name: "Executive Formal Shirt",
+    slug: "executive-formal-shirt",
+    description: "Premium office wear formal shirt.",
+    shortDescription: "Formal Shirt",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "Shirts",
+    price: 1899,
+    discount: 8,
+    finalPrice: 1747,
+    stock: 50,
+    sku: "NXR-M006",
+    thumbnail: "product-6-1.jpg",
+    images: [
+        "product-6-1.jpg",
+        "product-6-2.jpg"
+    ],
+    rating: 4.9,
+    totalReviews: 94,
+    featured: true,
+    newArrival: false,
+    dealOfTheDay: false,
+    bestSeller: false,
+    tags: ["formal","office","shirt"],
+    isActive: true
+},
 
-    featured:{
-        type:Boolean,
-        default:false
-    },
+{
+    name: "Adventure Cargo Pants",
+    slug: "adventure-cargo-pants",
+    description: "Comfortable multi-pocket cargo pants.",
+    shortDescription: "Cargo Pants",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "Pants",
+    price: 1999,
+    discount: 15,
+    finalPrice: 1699,
+    stock: 36,
+    sku: "NXR-M007",
+    thumbnail: "product-7-1.jpg",
+    images: [
+        "product-7-1.jpg",
+        "product-7-2.jpg"
+    ],
+    rating: 4.6,
+    totalReviews: 111,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: true,
+    bestSeller: false,
+    tags: ["cargo","pants","outdoor"],
+    isActive: true
+},
 
-    newArrival:{
-        type:Boolean,
-        default:false
-    },
+{
+    name: "Tropical Beach Shirt",
+    slug: "tropical-beach-shirt",
+    description: "Relaxed fit tropical vacation shirt.",
+    shortDescription: "Beach Shirt",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "Shirts",
+    price: 1499,
+    discount: 10,
+    finalPrice: 1349,
+    stock: 58,
+    sku: "NXR-M008",
+    thumbnail: "product-8-1.jpg",
+    images: [
+        "product-8-1.jpg",
+        "product-8-2.jpg"
+    ],
+    rating: 4.5,
+    totalReviews: 83,
+    featured: true,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: false,
+    tags: ["beach","shirt","summer"],
+    isActive: true
+},
 
-    dealOfTheDay:{
-        type:Boolean,
-        default:false
-    },
+{
+    name: "Classic Oxford Shirt",
+    slug: "classic-oxford-shirt",
+    description: "Oxford cotton shirt with premium finish.",
+    shortDescription: "Oxford Shirt",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "Shirts",
+    price: 1699,
+    discount: 5,
+    finalPrice: 1614,
+    stock: 40,
+    sku: "NXR-M009",
+    thumbnail: "product-9-1.jpg",
+    images: [
+        "product-9-1.jpg",
+        "product-9-2.jpg"
+    ],
+    rating: 4.8,
+    totalReviews: 128,
+    featured: true,
+    newArrival: false,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["oxford","shirt"],
+    isActive: true
+},
 
-    bestSeller:{
-        type:Boolean,
-        default:false
-    },
+{
+    name: "Minimalist Sweatshirt",
+    slug: "minimalist-sweatshirt",
+    description: "Soft cotton sweatshirt for everyday comfort.",
+    shortDescription: "Sweatshirt",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "Sweatshirts",
+    price: 1799,
+    discount: 10,
+    finalPrice: 1619,
+    stock: 47,
+    sku: "NXR-M010",
+    thumbnail: "product-10-1.jpg",
+    images: [
+        "product-10-1.jpg",
+        "product-10-2.jpg"
+    ],
+    rating: 4.7,
+    totalReviews: 105,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["sweatshirt","casual"],
+    isActive: true
+},
 
-    tags:[
-        String
-    ]
-
+{
+    name: "Premium Leather Jacket",
+    slug: "premium-leather-jacket",
+    description: "Luxury genuine leather jacket.",
+    shortDescription: "Leather Jacket",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "Jackets",
+    price: 5999,
+    discount: 18,
+    finalPrice: 4919,
+    stock: 15,
+    sku: "NXR-M011",
+    thumbnail: "product-11-1.jpg",
+    images: [
+        "product-11-1.jpg",
+        "product-11-2.jpg"
+    ],
+    rating: 5,
+    totalReviews: 260,
+    featured: true,
+    newArrival: false,
+    dealOfTheDay: true,
+    bestSeller: true,
+    tags: ["leather","jacket","premium"],
+    isActive: true
 },
 {
-    timestamps:true
-});
+    name: "Modern Bomber Jacket",
+    slug: "modern-bomber-jacket",
+    description: "Stylish bomber jacket with premium fabric.",
+    shortDescription: "Bomber Jacket",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "Jackets",
+    price: 3999,
+    discount: 15,
+    finalPrice: 3399,
+    stock: 28,
+    sku: "NXR-M012",
+    thumbnail: "product-12-1.jpg",
+    images: [
+        "product-12-1.jpg",
+        "product-12-2.jpg"
+    ],
+    rating: 4.8,
+    totalReviews: 175,
+    featured: true,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["bomber","jacket","winter"],
+    isActive: true
+},
 
-module.exports = mongoose.model("Product",productSchema);
+{
+    name: "Relaxed Fit Chinos",
+    slug: "relaxed-fit-chinos",
+    description: "Comfortable slim-fit chinos for everyday wear.",
+    shortDescription: "Chinos",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "Pants",
+    price: 1899,
+    discount: 10,
+    finalPrice: 1709,
+    stock: 52,
+    sku: "NXR-M013",
+    thumbnail: "product-13-1.jpg",
+    images: [
+        "product-13-1.jpg",
+        "product-13-2.jpg"
+    ],
+    rating: 4.6,
+    totalReviews: 96,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: false,
+    tags: ["pants","chinos"],
+    isActive: true
+},
+
+{
+    name: "Classic Crew Neck T-Shirt",
+    slug: "classic-crew-neck-tshirt",
+    description: "Premium cotton crew neck t-shirt.",
+    shortDescription: "Crew Neck",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "T-Shirts",
+    price: 899,
+    discount: 5,
+    finalPrice: 854,
+    stock: 80,
+    sku: "NXR-M014",
+    thumbnail: "product-14-1.jpg",
+    images: [
+        "product-14-1.jpg",
+        "product-14-2.jpg"
+    ],
+    rating: 4.5,
+    totalReviews: 180,
+    featured: true,
+    newArrival: false,
+    dealOfTheDay: true,
+    bestSeller: true,
+    tags: ["tshirt","cotton"],
+    isActive: true
+},
+
+{
+    name: "Premium Winter Sweater",
+    slug: "premium-winter-sweater",
+    description: "Warm knitted sweater for cold weather.",
+    shortDescription: "Sweater",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "Sweaters",
+    price: 2499,
+    discount: 20,
+    finalPrice: 1999,
+    stock: 34,
+    sku: "NXR-M015",
+    thumbnail: "product-15-1.jpg",
+    images: [
+        "product-15-1.jpg",
+        "product-15-2.jpg"
+    ],
+    rating: 4.9,
+    totalReviews: 205,
+    featured: true,
+    newArrival: true,
+    dealOfTheDay: true,
+    bestSeller: true,
+    tags: ["sweater","winter"],
+    isActive: true
+},
+
+{
+    name: "Casual Zip Hoodie",
+    slug: "casual-zip-hoodie",
+    description: "Soft fleece zip hoodie for casual wear.",
+    shortDescription: "Zip Hoodie",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "Hoodies",
+    price: 2199,
+    discount: 12,
+    finalPrice: 1935,
+    stock: 44,
+    sku: "NXR-M016",
+    thumbnail: "product-16-1.jpg",
+    images: [
+        "product-16-1.jpg",
+        "product-16-2.jpg"
+    ],
+    rating: 4.7,
+    totalReviews: 118,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["hoodie","zip"],
+    isActive: true
+},
+{
+    name: "Essential Henley T-Shirt",
+    slug: "essential-henley-tshirt",
+    description: "Comfortable henley neck cotton t-shirt.",
+    shortDescription: "Henley T-Shirt",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "T-Shirts",
+    price: 1099,
+    discount: 8,
+    finalPrice: 1011,
+    stock: 65,
+    sku: "NXR-M017",
+    thumbnail: "product-1-1.jpg",
+    images: [
+        "product-1-1.jpg",
+        "product-1-2.jpg"
+    ],
+    rating: 4.6,
+    totalReviews: 102,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: false,
+    tags: ["henley","cotton","casual"],
+    isActive: true
+},
+
+{
+    name: "Weekend Casual Shirt",
+    slug: "weekend-casual-shirt",
+    description: "Perfect casual shirt for weekends.",
+    shortDescription: "Casual Shirt",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "Shirts",
+    price: 1599,
+    discount: 10,
+    finalPrice: 1439,
+    stock: 46,
+    sku: "NXR-M018",
+    thumbnail: "product-2-1.jpg",
+    images: [
+        "product-2-1.jpg",
+        "product-2-2.jpg"
+    ],
+    rating: 4.7,
+    totalReviews: 94,
+    featured: true,
+    newArrival: false,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["shirt","casual"],
+    isActive: true
+},
+
+{
+    name: "Vintage Denim Shirt",
+    slug: "vintage-denim-shirt",
+    description: "Soft washed denim shirt.",
+    shortDescription: "Denim Shirt",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "Shirts",
+    price: 1899,
+    discount: 15,
+    finalPrice: 1614,
+    stock: 39,
+    sku: "NXR-M019",
+    thumbnail: "product-3-1.jpg",
+    images: [
+        "product-3-1.jpg",
+        "product-3-2.jpg"
+    ],
+    rating: 4.8,
+    totalReviews: 140,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: true,
+    bestSeller: false,
+    tags: ["denim","shirt"],
+    isActive: true
+},
+
+{
+    name: "Premium Cotton Polo",
+    slug: "premium-cotton-polo",
+    description: "Premium polo with stretch cotton fabric.",
+    shortDescription: "Polo",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "T-Shirts",
+    price: 1399,
+    discount: 12,
+    finalPrice: 1231,
+    stock: 53,
+    sku: "NXR-M020",
+    thumbnail: "product-4-1.jpg",
+    images: [
+        "product-4-1.jpg",
+        "product-4-2.jpg"
+    ],
+    rating: 4.5,
+    totalReviews: 89,
+    featured: true,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: false,
+    tags: ["polo","tshirt"],
+    isActive: true
+},
+
+{
+    name: "Winter Pullover Hoodie",
+    slug: "winter-pullover-hoodie",
+    description: "Soft fleece pullover hoodie.",
+    shortDescription: "Pullover Hoodie",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "Hoodies",
+    price: 2399,
+    discount: 15,
+    finalPrice: 2039,
+    stock: 37,
+    sku: "NXR-M021",
+    thumbnail: "product-5-1.jpg",
+    images: [
+        "product-5-1.jpg",
+        "product-5-2.jpg"
+    ],
+    rating: 4.9,
+    totalReviews: 188,
+    featured: true,
+    newArrival: false,
+    dealOfTheDay: true,
+    bestSeller: true,
+    tags: ["hoodie","winter"],
+    isActive: true
+},
+
+{
+    name: "Business Formal Shirt",
+    slug: "business-formal-shirt",
+    description: "Professional office shirt with wrinkle-free fabric.",
+    shortDescription: "Business Shirt",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "Shirts",
+    price: 1999,
+    discount: 10,
+    finalPrice: 1799,
+    stock: 42,
+    sku: "NXR-M022",
+    thumbnail: "product-6-1.jpg",
+    images: [
+        "product-6-1.jpg",
+        "product-6-2.jpg"
+    ],
+    rating: 4.8,
+    totalReviews: 121,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["formal","office"],
+    isActive: true
+},
+
+{
+    name: "Slim Fit Joggers",
+    slug: "slim-fit-joggers",
+    description: "Athletic slim fit jogger pants.",
+    shortDescription: "Joggers",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "Pants",
+    price: 1699,
+    discount: 10,
+    finalPrice: 1529,
+    stock: 55,
+    sku: "NXR-M023",
+    thumbnail: "product-7-1.jpg",
+    images: [
+        "product-7-1.jpg",
+        "product-7-2.jpg"
+    ],
+    rating: 4.7,
+    totalReviews: 101,
+    featured: true,
+    newArrival: false,
+    dealOfTheDay: true,
+    bestSeller: false,
+    tags: ["joggers","pants"],
+    isActive: true
+},
+
+{
+    name: "Resort Floral Shirt",
+    slug: "resort-floral-shirt",
+    description: "Bright floral shirt for vacations.",
+    shortDescription: "Floral Shirt",
+    brand: "Nexura",
+    category: "Men",
+    subCategory: "Shirts",
+    price: 1499,
+    discount: 15,
+    finalPrice: 1274,
+    stock: 60,
+    sku: "NXR-M024",
+    thumbnail: "product-8-1.jpg",
+    images: [
+        "product-8-1.jpg",
+        "product-8-2.jpg"
+    ],
+    rating: 4.6,
+    totalReviews: 95,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["floral","summer","shirt"],
+    isActive: true
+},
+{
+    name: "Elegant Floral Dress",
+    slug: "elegant-floral-dress",
+    description: "Elegant floral dress perfect for casual outings and parties.",
+    shortDescription: "Floral Dress",
+    brand: "Nexura",
+    category: "Women",
+    subCategory: "Dresses",
+    price: 2499,
+    discount: 15,
+    finalPrice: 2124,
+    stock: 38,
+    sku: "NXR-W001",
+    thumbnail: "product-9-1.jpg",
+    images: [
+        "product-9-1.jpg",
+        "product-9-2.jpg"
+    ],
+    rating: 4.8,
+    totalReviews: 142,
+    featured: true,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["dress","floral","women"],
+    isActive: true
+},
+
+{
+    name: "Summer Cotton Top",
+    slug: "summer-cotton-top",
+    description: "Soft cotton top for daily wear.",
+    shortDescription: "Cotton Top",
+    brand: "Nexura",
+    category: "Women",
+    subCategory: "Tops",
+    price: 999,
+    discount: 10,
+    finalPrice: 899,
+    stock: 62,
+    sku: "NXR-W002",
+    thumbnail: "product-10-1.jpg",
+    images: [
+        "product-10-1.jpg",
+        "product-10-2.jpg"
+    ],
+    rating: 4.6,
+    totalReviews: 88,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: false,
+    tags: ["top","cotton"],
+    isActive: true
+},
+
+{
+    name: "Printed Kurti",
+    slug: "printed-kurti",
+    description: "Comfortable printed kurti for everyday style.",
+    shortDescription: "Kurti",
+    brand: "Nexura",
+    category: "Women",
+    subCategory: "Kurtis",
+    price: 1599,
+    discount: 20,
+    finalPrice: 1279,
+    stock: 46,
+    sku: "NXR-W003",
+    thumbnail: "product-11-1.jpg",
+    images: [
+        "product-11-1.jpg",
+        "product-11-2.jpg"
+    ],
+    rating: 4.7,
+    totalReviews: 133,
+    featured: true,
+    newArrival: false,
+    dealOfTheDay: true,
+    bestSeller: true,
+    tags: ["kurti","ethnic"],
+    isActive: true
+},
+
+{
+    name: "Women's Denim Jacket",
+    slug: "womens-denim-jacket",
+    description: "Modern denim jacket with premium stitching.",
+    shortDescription: "Denim Jacket",
+    brand: "Nexura",
+    category: "Women",
+    subCategory: "Jackets",
+    price: 3299,
+    discount: 12,
+    finalPrice: 2903,
+    stock: 24,
+    sku: "NXR-W004",
+    thumbnail: "product-12-1.jpg",
+    images: [
+        "product-12-1.jpg",
+        "product-12-2.jpg"
+    ],
+    rating: 4.9,
+    totalReviews: 170,
+    featured: true,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["denim","jacket"],
+    isActive: true
+},
+
+{
+    name: "Casual Women's Hoodie",
+    slug: "casual-womens-hoodie",
+    description: "Soft fleece hoodie for everyday comfort.",
+    shortDescription: "Women's Hoodie",
+    brand: "Nexura",
+    category: "Women",
+    subCategory: "Hoodies",
+    price: 2199,
+    discount: 10,
+    finalPrice: 1979,
+    stock: 39,
+    sku: "NXR-W005",
+    thumbnail: "product-1-1.jpg",
+    images: [
+        "product-1-1.jpg",
+        "product-1-2.jpg"
+    ],
+    rating: 4.7,
+    totalReviews: 117,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: false,
+    tags: ["hoodie","women"],
+    isActive: true
+},
+
+{
+    name: "Elegant Office Blazer",
+    slug: "elegant-office-blazer",
+    description: "Professional blazer for office and formal events.",
+    shortDescription: "Office Blazer",
+    brand: "Nexura",
+    category: "Women",
+    subCategory: "Blazers",
+    price: 3999,
+    discount: 18,
+    finalPrice: 3279,
+    stock: 20,
+    sku: "NXR-W006",
+    thumbnail: "product-2-1.jpg",
+    images: [
+        "product-2-1.jpg",
+        "product-2-2.jpg"
+    ],
+    rating: 4.9,
+    totalReviews: 148,
+    featured: true,
+    newArrival: false,
+    dealOfTheDay: true,
+    bestSeller: true,
+    tags: ["blazer","office"],
+    isActive: true
+},
+
+{
+    name: "Classic Midi Skirt",
+    slug: "classic-midi-skirt",
+    description: "Elegant midi skirt suitable for all occasions.",
+    shortDescription: "Midi Skirt",
+    brand: "Nexura",
+    category: "Women",
+    subCategory: "Skirts",
+    price: 1699,
+    discount: 10,
+    finalPrice: 1529,
+    stock: 48,
+    sku: "NXR-W007",
+    thumbnail: "product-3-1.jpg",
+    images: [
+        "product-3-1.jpg",
+        "product-3-2.jpg"
+    ],
+    rating: 4.6,
+    totalReviews: 104,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: false,
+    tags: ["skirt","women"],
+    isActive: true
+},
+
+{
+    name: "Relaxed Fit Jeans",
+    slug: "relaxed-fit-jeans",
+    description: "Stretchable relaxed fit denim jeans.",
+    shortDescription: "Women's Jeans",
+    brand: "Nexura",
+    category: "Women",
+    subCategory: "Jeans",
+    price: 2299,
+    discount: 15,
+    finalPrice: 1954,
+    stock: 42,
+    sku: "NXR-W008",
+    thumbnail: "product-4-1.jpg",
+    images: [
+        "product-4-1.jpg",
+        "product-4-2.jpg"
+    ],
+    rating: 4.8,
+    totalReviews: 156,
+    featured: true,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["jeans","denim","women"],
+    isActive: true
+},
+{
+    name: "Boho Maxi Dress",
+    slug: "boho-maxi-dress",
+    description: "Elegant bohemian maxi dress with floral prints.",
+    shortDescription: "Maxi Dress",
+    brand: "Nexura",
+    category: "Women",
+    subCategory: "Dresses",
+    price: 2899,
+    discount: 12,
+    finalPrice: 2551,
+    stock: 35,
+    sku: "NXR-W009",
+    thumbnail: "product-5-1.jpg",
+    images: [
+        "product-5-1.jpg",
+        "product-5-2.jpg"
+    ],
+    rating: 4.9,
+    totalReviews: 182,
+    featured: true,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["dress","maxi","boho"],
+    isActive: true
+},
+
+{
+    name: "Elegant Silk Blouse",
+    slug: "elegant-silk-blouse",
+    description: "Premium silk blouse for office and casual wear.",
+    shortDescription: "Silk Blouse",
+    brand: "Nexura",
+    category: "Women",
+    subCategory: "Tops",
+    price: 1799,
+    discount: 15,
+    finalPrice: 1529,
+    stock: 41,
+    sku: "NXR-W010",
+    thumbnail: "product-6-1.jpg",
+    images: [
+        "product-6-1.jpg",
+        "product-6-2.jpg"
+    ],
+    rating: 4.8,
+    totalReviews: 119,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: true,
+    bestSeller: false,
+    tags: ["blouse","office"],
+    isActive: true
+},
+
+{
+    name: "High Waist Trousers",
+    slug: "high-waist-trousers",
+    description: "Comfortable high waist trousers with stretch fabric.",
+    shortDescription: "Trousers",
+    brand: "Nexura",
+    category: "Women",
+    subCategory: "Pants",
+    price: 1999,
+    discount: 10,
+    finalPrice: 1799,
+    stock: 39,
+    sku: "NXR-W011",
+    thumbnail: "product-7-1.jpg",
+    images: [
+        "product-7-1.jpg",
+        "product-7-2.jpg"
+    ],
+    rating: 4.7,
+    totalReviews: 111,
+    featured: false,
+    newArrival: false,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["pants","formal"],
+    isActive: true
+},
+
+{
+    name: "Knitted Cardigan",
+    slug: "knitted-cardigan",
+    description: "Soft knitted cardigan for winter layering.",
+    shortDescription: "Cardigan",
+    brand: "Nexura",
+    category: "Women",
+    subCategory: "Sweaters",
+    price: 2499,
+    discount: 20,
+    finalPrice: 1999,
+    stock: 28,
+    sku: "NXR-W012",
+    thumbnail: "product-8-1.jpg",
+    images: [
+        "product-8-1.jpg",
+        "product-8-2.jpg"
+    ],
+    rating: 4.9,
+    totalReviews: 164,
+    featured: true,
+    newArrival: true,
+    dealOfTheDay: true,
+    bestSeller: true,
+    tags: ["cardigan","winter"],
+    isActive: true
+},
+
+{
+    name: "AirFlex Running Shoes",
+    slug: "airflex-running-shoes",
+    description: "Lightweight running shoes with cushioned sole.",
+    shortDescription: "Running Shoes",
+    brand: "Nexura",
+    category: "Footwear",
+    subCategory: "Sports Shoes",
+    price: 3499,
+    discount: 18,
+    finalPrice: 2869,
+    stock: 45,
+    sku: "NXR-F001",
+    thumbnail: "product-9-1.jpg",
+    images: [
+        "product-9-1.jpg",
+        "product-9-2.jpg"
+    ],
+    rating: 4.9,
+    totalReviews: 243,
+    featured: true,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["running","sports","shoes"],
+    isActive: true
+},
+
+{
+    name: "Urban Sneakers",
+    slug: "urban-sneakers",
+    description: "Comfortable sneakers for everyday lifestyle.",
+    shortDescription: "Sneakers",
+    brand: "Nexura",
+    category: "Footwear",
+    subCategory: "Sneakers",
+    price: 2999,
+    discount: 10,
+    finalPrice: 2699,
+    stock: 56,
+    sku: "NXR-F002",
+    thumbnail: "product-10-1.jpg",
+    images: [
+        "product-10-1.jpg",
+        "product-10-2.jpg"
+    ],
+    rating: 4.8,
+    totalReviews: 211,
+    featured: true,
+    newArrival: false,
+    dealOfTheDay: true,
+    bestSeller: true,
+    tags: ["sneakers","casual"],
+    isActive: true
+},
+
+{
+    name: "Classic Leather Shoes",
+    slug: "classic-leather-shoes",
+    description: "Premium leather shoes for formal occasions.",
+    shortDescription: "Leather Shoes",
+    brand: "Nexura",
+    category: "Footwear",
+    subCategory: "Formal Shoes",
+    price: 4599,
+    discount: 15,
+    finalPrice: 3909,
+    stock: 24,
+    sku: "NXR-F003",
+    thumbnail: "product-11-1.jpg",
+    images: [
+        "product-11-1.jpg",
+        "product-11-2.jpg"
+    ],
+    rating: 5,
+    totalReviews: 198,
+    featured: false,
+    newArrival: false,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["formal","leather"],
+    isActive: true
+},
+
+{
+    name: "Trail Trek Shoes",
+    slug: "trail-trek-shoes",
+    description: "Durable trekking shoes for outdoor adventures.",
+    shortDescription: "Trekking Shoes",
+    brand: "Nexura",
+    category: "Footwear",
+    subCategory: "Outdoor",
+    price: 4999,
+    discount: 20,
+    finalPrice: 3999,
+    stock: 20,
+    sku: "NXR-F004",
+    thumbnail: "product-12-1.jpg",
+    images: [
+        "product-12-1.jpg",
+        "product-12-2.jpg"
+    ],
+    rating: 4.9,
+    totalReviews: 176,
+    featured: true,
+    newArrival: true,
+    dealOfTheDay: true,
+    bestSeller: false,
+    tags: ["trekking","outdoor","boots"],
+    isActive: true
+},
+{
+    name: "Performance Running Shoes",
+    slug: "performance-running-shoes",
+    description: "Lightweight running shoes designed for maximum comfort.",
+    shortDescription: "Running Shoes",
+    brand: "Nexura",
+    category: "Footwear",
+    subCategory: "Sports Shoes",
+    price: 3799,
+    discount: 15,
+    finalPrice: 3229,
+    stock: 42,
+    sku: "NXR-F005",
+    thumbnail: "product-1-1.jpg",
+    images: [
+        "product-1-1.jpg",
+        "product-1-2.jpg"
+    ],
+    rating: 4.8,
+    totalReviews: 194,
+    featured: true,
+    newArrival: false,
+    dealOfTheDay: true,
+    bestSeller: true,
+    tags: ["running","sports","fitness"],
+    isActive: true
+},
+
+{
+    name: "Everyday Canvas Sneakers",
+    slug: "everyday-canvas-sneakers",
+    description: "Comfortable sneakers for everyday casual wear.",
+    shortDescription: "Canvas Sneakers",
+    brand: "Nexura",
+    category: "Footwear",
+    subCategory: "Sneakers",
+    price: 2699,
+    discount: 10,
+    finalPrice: 2429,
+    stock: 55,
+    sku: "NXR-F006",
+    thumbnail: "product-2-1.jpg",
+    images: [
+        "product-2-1.jpg",
+        "product-2-2.jpg"
+    ],
+    rating: 4.6,
+    totalReviews: 158,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["canvas","casual","sneakers"],
+    isActive: true
+},
+
+{
+    name: "Classic Chelsea Boots",
+    slug: "classic-chelsea-boots",
+    description: "Premium leather Chelsea boots with durable sole.",
+    shortDescription: "Chelsea Boots",
+    brand: "Nexura",
+    category: "Footwear",
+    subCategory: "Boots",
+    price: 5499,
+    discount: 18,
+    finalPrice: 4509,
+    stock: 18,
+    sku: "NXR-F007",
+    thumbnail: "product-3-1.jpg",
+    images: [
+        "product-3-1.jpg",
+        "product-3-2.jpg"
+    ],
+    rating: 4.9,
+    totalReviews: 126,
+    featured: true,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: false,
+    tags: ["boots","leather"],
+    isActive: true
+},
+
+{
+    name: "Comfort Walking Shoes",
+    slug: "comfort-walking-shoes",
+    description: "Ultra-light walking shoes for daily comfort.",
+    shortDescription: "Walking Shoes",
+    brand: "Nexura",
+    category: "Footwear",
+    subCategory: "Walking Shoes",
+    price: 2899,
+    discount: 12,
+    finalPrice: 2551,
+    stock: 47,
+    sku: "NXR-F008",
+    thumbnail: "product-4-1.jpg",
+    images: [
+        "product-4-1.jpg",
+        "product-4-2.jpg"
+    ],
+    rating: 4.7,
+    totalReviews: 143,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: true,
+    bestSeller: true,
+    tags: ["walking","comfort"],
+    isActive: true
+},
+
+{
+    name: "Executive Leather Backpack",
+    slug: "executive-leather-backpack",
+    description: "Premium leather backpack for office and travel.",
+    shortDescription: "Leather Backpack",
+    brand: "Nexura",
+    category: "Bags",
+    subCategory: "Backpacks",
+    price: 4299,
+    discount: 15,
+    finalPrice: 3654,
+    stock: 28,
+    sku: "NXR-B001",
+    thumbnail: "product-5-1.jpg",
+    images: [
+        "product-5-1.jpg",
+        "product-5-2.jpg"
+    ],
+    rating: 4.8,
+    totalReviews: 112,
+    featured: true,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["backpack","office"],
+    isActive: true
+},
+
+{
+    name: "Weekend Travel Duffel",
+    slug: "weekend-travel-duffel",
+    description: "Spacious travel duffel bag with multiple compartments.",
+    shortDescription: "Duffel Bag",
+    brand: "Nexura",
+    category: "Bags",
+    subCategory: "Travel Bags",
+    price: 3899,
+    discount: 10,
+    finalPrice: 3509,
+    stock: 24,
+    sku: "NXR-B002",
+    thumbnail: "product-6-1.jpg",
+    images: [
+        "product-6-1.jpg",
+        "product-6-2.jpg"
+    ],
+    rating: 4.9,
+    totalReviews: 97,
+    featured: true,
+    newArrival: false,
+    dealOfTheDay: true,
+    bestSeller: false,
+    tags: ["travel","duffel"],
+    isActive: true
+},
+
+{
+    name: "Urban Laptop Backpack",
+    slug: "urban-laptop-backpack",
+    description: "Water-resistant backpack with dedicated laptop compartment.",
+    shortDescription: "Laptop Backpack",
+    brand: "Nexura",
+    category: "Bags",
+    subCategory: "Laptop Bags",
+    price: 3299,
+    discount: 12,
+    finalPrice: 2903,
+    stock: 36,
+    sku: "NXR-B003",
+    thumbnail: "product-7-1.jpg",
+    images: [
+        "product-7-1.jpg",
+        "product-7-2.jpg"
+    ],
+    rating: 4.8,
+    totalReviews: 181,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["laptop","backpack"],
+    isActive: true
+},
+
+{
+    name: "Classic Messenger Bag",
+    slug: "classic-messenger-bag",
+    description: "Stylish messenger bag made from premium PU leather.",
+    shortDescription: "Messenger Bag",
+    brand: "Nexura",
+    category: "Bags",
+    subCategory: "Messenger Bags",
+    price: 2799,
+    discount: 15,
+    finalPrice: 2379,
+    stock: 30,
+    sku: "NXR-B004",
+    thumbnail: "product-8-1.jpg",
+    images: [
+        "product-8-1.jpg",
+        "product-8-2.jpg"
+    ],
+    rating: 4.7,
+    totalReviews: 105,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: true,
+    bestSeller: false,
+    tags: ["messenger","office"],
+    isActive: true
+},
+{
+    name: "Premium Leather Handbag",
+    slug: "premium-leather-handbag",
+    description: "Elegant leather handbag for daily and office use.",
+    shortDescription: "Leather Handbag",
+    brand: "Nexura",
+    category: "Bags",
+    subCategory: "Handbags",
+    price: 3599,
+    discount: 15,
+    finalPrice: 3059,
+    stock: 34,
+    sku: "NXR-B005",
+    thumbnail: "product-9-1.jpg",
+    images: [
+        "product-9-1.jpg",
+        "product-9-2.jpg"
+    ],
+    rating: 4.9,
+    totalReviews: 176,
+    featured: true,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["handbag","leather","women"],
+    isActive: true
+},
+
+{
+    name: "Mini Crossbody Bag",
+    slug: "mini-crossbody-bag",
+    description: "Compact crossbody bag with adjustable strap.",
+    shortDescription: "Crossbody Bag",
+    brand: "Nexura",
+    category: "Bags",
+    subCategory: "Crossbody Bags",
+    price: 2199,
+    discount: 10,
+    finalPrice: 1979,
+    stock: 46,
+    sku: "NXR-B006",
+    thumbnail: "product-10-1.jpg",
+    images: [
+        "product-10-1.jpg",
+        "product-10-2.jpg"
+    ],
+    rating: 4.7,
+    totalReviews: 123,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["crossbody","bag"],
+    isActive: true
+},
+
+{
+    name: "Canvas Travel Backpack",
+    slug: "canvas-travel-backpack",
+    description: "Durable canvas backpack with spacious compartments.",
+    shortDescription: "Travel Backpack",
+    brand: "Nexura",
+    category: "Bags",
+    subCategory: "Backpacks",
+    price: 3199,
+    discount: 12,
+    finalPrice: 2815,
+    stock: 32,
+    sku: "NXR-B007",
+    thumbnail: "product-11-1.jpg",
+    images: [
+        "product-11-1.jpg",
+        "product-11-2.jpg"
+    ],
+    rating: 4.8,
+    totalReviews: 158,
+    featured: true,
+    newArrival: false,
+    dealOfTheDay: true,
+    bestSeller: false,
+    tags: ["travel","backpack"],
+    isActive: true
+},
+
+{
+    name: "Luxury Office Briefcase",
+    slug: "luxury-office-briefcase",
+    description: "Premium briefcase designed for professionals.",
+    shortDescription: "Briefcase",
+    brand: "Nexura",
+    category: "Bags",
+    subCategory: "Briefcases",
+    price: 5499,
+    discount: 18,
+    finalPrice: 4509,
+    stock: 16,
+    sku: "NXR-B008",
+    thumbnail: "product-12-1.jpg",
+    images: [
+        "product-12-1.jpg",
+        "product-12-2.jpg"
+    ],
+    rating: 5,
+    totalReviews: 142,
+    featured: true,
+    newArrival: false,
+    dealOfTheDay: true,
+    bestSeller: true,
+    tags: ["briefcase","office"],
+    isActive: true
+},
+
+{
+    name: "Premium Analog Watch",
+    slug: "premium-analog-watch",
+    description: "Elegant stainless steel analog wrist watch.",
+    shortDescription: "Analog Watch",
+    brand: "Nexura",
+    category: "Accessories",
+    subCategory: "Watches",
+    price: 4999,
+    discount: 20,
+    finalPrice: 3999,
+    stock: 25,
+    sku: "NXR-A001",
+    thumbnail: "product-1-1.jpg",
+    images: [
+        "product-1-1.jpg",
+        "product-1-2.jpg"
+    ],
+    rating: 4.9,
+    totalReviews: 241,
+    featured: true,
+    newArrival: true,
+    dealOfTheDay: true,
+    bestSeller: true,
+    tags: ["watch","accessories"],
+    isActive: true
+},
+
+{
+    name: "Polarized Sunglasses",
+    slug: "polarized-sunglasses",
+    description: "UV protected polarized sunglasses.",
+    shortDescription: "Sunglasses",
+    brand: "Nexura",
+    category: "Accessories",
+    subCategory: "Eyewear",
+    price: 1899,
+    discount: 15,
+    finalPrice: 1614,
+    stock: 61,
+    sku: "NXR-A002",
+    thumbnail: "product-2-1.jpg",
+    images: [
+        "product-2-1.jpg",
+        "product-2-2.jpg"
+    ],
+    rating: 4.7,
+    totalReviews: 132,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["sunglasses","eyewear"],
+    isActive: true
+},
+
+{
+    name: "Classic Leather Wallet",
+    slug: "classic-leather-wallet",
+    description: "Genuine leather wallet with RFID protection.",
+    shortDescription: "Leather Wallet",
+    brand: "Nexura",
+    category: "Accessories",
+    subCategory: "Wallets",
+    price: 1599,
+    discount: 10,
+    finalPrice: 1439,
+    stock: 74,
+    sku: "NXR-A003",
+    thumbnail: "product-3-1.jpg",
+    images: [
+        "product-3-1.jpg",
+        "product-3-2.jpg"
+    ],
+    rating: 4.8,
+    totalReviews: 188,
+    featured: true,
+    newArrival: false,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["wallet","leather"],
+    isActive: true
+},
+
+{
+    name: "Adjustable Baseball Cap",
+    slug: "adjustable-baseball-cap",
+    description: "Comfortable cotton baseball cap.",
+    shortDescription: "Baseball Cap",
+    brand: "Nexura",
+    category: "Accessories",
+    subCategory: "Caps",
+    price: 899,
+    discount: 5,
+    finalPrice: 854,
+    stock: 95,
+    sku: "NXR-A004",
+    thumbnail: "product-4-1.jpg",
+    images: [
+        "product-4-1.jpg",
+        "product-4-2.jpg"
+    ],
+    rating: 4.5,
+    totalReviews: 104,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: false,
+    tags: ["cap","cotton"],
+    isActive: true
+},
+{
+    name: "Nexura Smart Watch",
+    slug: "nexura-smart-watch",
+    description: "Feature-rich smartwatch with heart rate and fitness tracking.",
+    shortDescription: "Smart Watch",
+    brand: "Nexura",
+    category: "Electronics",
+    subCategory: "Wearables",
+    price: 6999,
+    discount: 20,
+    finalPrice: 5599,
+    stock: 35,
+    sku: "NXR-E001",
+    thumbnail: "product-5-1.jpg",
+    images: [
+        "product-5-1.jpg",
+        "product-5-2.jpg"
+    ],
+    rating: 4.8,
+    totalReviews: 286,
+    featured: true,
+    newArrival: true,
+    dealOfTheDay: true,
+    bestSeller: true,
+    tags: ["smartwatch","electronics","wearable"],
+    isActive: true
+},
+
+{
+    name: "Wireless Bluetooth Earbuds",
+    slug: "wireless-bluetooth-earbuds",
+    description: "Noise cancelling wireless earbuds with charging case.",
+    shortDescription: "Bluetooth Earbuds",
+    brand: "Nexura",
+    category: "Electronics",
+    subCategory: "Audio",
+    price: 3499,
+    discount: 15,
+    finalPrice: 2974,
+    stock: 58,
+    sku: "NXR-E002",
+    thumbnail: "product-6-1.jpg",
+    images: [
+        "product-6-1.jpg",
+        "product-6-2.jpg"
+    ],
+    rating: 4.7,
+    totalReviews: 194,
+    featured: true,
+    newArrival: false,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["earbuds","audio","wireless"],
+    isActive: true
+},
+
+{
+    name: "Portable Bluetooth Speaker",
+    slug: "portable-bluetooth-speaker",
+    description: "Portable waterproof speaker with deep bass.",
+    shortDescription: "Bluetooth Speaker",
+    brand: "Nexura",
+    category: "Electronics",
+    subCategory: "Audio",
+    price: 2899,
+    discount: 12,
+    finalPrice: 2551,
+    stock: 41,
+    sku: "NXR-E003",
+    thumbnail: "product-7-1.jpg",
+    images: [
+        "product-7-1.jpg",
+        "product-7-2.jpg"
+    ],
+    rating: 4.6,
+    totalReviews: 167,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: true,
+    bestSeller: false,
+    tags: ["speaker","bluetooth"],
+    isActive: true
+},
+
+{
+    name: "Fast Wireless Charger",
+    slug: "fast-wireless-charger",
+    description: "15W fast wireless charging pad compatible with all Qi devices.",
+    shortDescription: "Wireless Charger",
+    brand: "Nexura",
+    category: "Electronics",
+    subCategory: "Accessories",
+    price: 1499,
+    discount: 10,
+    finalPrice: 1349,
+    stock: 70,
+    sku: "NXR-E004",
+    thumbnail: "product-8-1.jpg",
+    images: [
+        "product-8-1.jpg",
+        "product-8-2.jpg"
+    ],
+    rating: 4.5,
+    totalReviews: 118,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["charger","wireless"],
+    isActive: true
+},
+
+{
+    name: "Modern Table Lamp",
+    slug: "modern-table-lamp",
+    description: "Minimalist LED table lamp for bedroom and office.",
+    shortDescription: "Table Lamp",
+    brand: "Nexura",
+    category: "Home",
+    subCategory: "Lighting",
+    price: 2299,
+    discount: 15,
+    finalPrice: 1954,
+    stock: 33,
+    sku: "NXR-H001",
+    thumbnail: "product-9-1.jpg",
+    images: [
+        "product-9-1.jpg",
+        "product-9-2.jpg"
+    ],
+    rating: 4.7,
+    totalReviews: 92,
+    featured: true,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: false,
+    tags: ["lamp","home","lighting"],
+    isActive: true
+},
+
+{
+    name: "Decorative Wall Clock",
+    slug: "decorative-wall-clock",
+    description: "Elegant silent wall clock with wooden finish.",
+    shortDescription: "Wall Clock",
+    brand: "Nexura",
+    category: "Home",
+    subCategory: "Decor",
+    price: 1799,
+    discount: 10,
+    finalPrice: 1619,
+    stock: 45,
+    sku: "NXR-H002",
+    thumbnail: "product-10-1.jpg",
+    images: [
+        "product-10-1.jpg",
+        "product-10-2.jpg"
+    ],
+    rating: 4.6,
+    totalReviews: 81,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: true,
+    bestSeller: false,
+    tags: ["clock","decor"],
+    isActive: true
+},
+
+{
+    name: "Luxury Cushion Set",
+    slug: "luxury-cushion-set",
+    description: "Soft decorative cushion set for living rooms.",
+    shortDescription: "Cushion Set",
+    brand: "Nexura",
+    category: "Home",
+    subCategory: "Home Decor",
+    price: 1299,
+    discount: 12,
+    finalPrice: 1143,
+    stock: 50,
+    sku: "NXR-H003",
+    thumbnail: "product-11-1.jpg",
+    images: [
+        "product-11-1.jpg",
+        "product-11-2.jpg"
+    ],
+    rating: 4.8,
+    totalReviews: 97,
+    featured: true,
+    newArrival: false,
+    dealOfTheDay: false,
+    bestSeller: true,
+    tags: ["cushion","decor"],
+    isActive: true
+},
+
+{
+    name: "Indoor Decorative Plant",
+    slug: "indoor-decorative-plant",
+    description: "Artificial indoor plant for modern interiors.",
+    shortDescription: "Decorative Plant",
+    brand: "Nexura",
+    category: "Home",
+    subCategory: "Plants",
+    price: 999,
+    discount: 5,
+    finalPrice: 949,
+    stock: 64,
+    sku: "NXR-H004",
+    thumbnail: "product-12-1.jpg",
+    images: [
+        "product-12-1.jpg",
+        "product-12-2.jpg"
+    ],
+    rating: 4.5,
+    totalReviews: 76,
+    featured: false,
+    newArrival: true,
+    dealOfTheDay: false,
+    bestSeller: false,
+    tags: ["plant","home","decor"],
+    isActive: true
+}
+
+];

@@ -27,15 +27,15 @@
       <div class="header__top">
         <div class="header__container container">
           <div class="header__contact">
-            <span>(+01) - 2345 - 6789</span>
+            <span>(+91) -  1860 267 6161</span>
             <span>Our location</span>
           </div>
           <p class="header__alert-news">
             Super Values Deals - Save more coupons
           </p>
-          <a href="login-register.html" class="header__top-action">
-            Log In / Sign Up
-          </a>
+          <a href="login-register.html" class="header__top-action" id="topAuthLink">
+    Log In / Sign Up
+</a>
         </div>
       </div>
 
@@ -62,7 +62,9 @@
               <a href="compare.html" class="nav__link">Compare</a>
             </li>
             <li class="nav__item">
-              <a href="login-register.html" class="nav__link">Login</a>
+              <a href="login-register.html" class="nav__link" id="navAuthLink">
+    Login
+</a>
             </li>
           </ul>
           <div class="header__search">
@@ -83,7 +85,7 @@
           </a>
           <a href="cart.html" class="header__action-btn" title="Cart">
             <img src="assets/img/icon-cart.svg" alt="" />
-            <span class="count">3</span>
+            <span class="count" id="cartCount">0</span>
           </a>
         </div>
       </nav>
@@ -91,146 +93,196 @@
 
     <!--=============== MAIN ===============-->
     <main class="main">
+
       <!--=============== BREADCRUMB ===============-->
-      <section class="breadcrumb">
-        <ul class="breadcrumb__list flex container">
-          <li><a href="index.html" class="breadcrumb__link">Home</a></li>
-          <li><span class="breadcrumb__link"></span>></li>
-          <li><span class="breadcrumb__link">Fashion</span></li>
-          <li><span class="breadcrumb__link"></span>></li>
-          <li><span class="breadcrumb__link">Henley Shirt</span></li>
-        </ul>
-      </section>
+<section class="breadcrumb">
+  <ul class="breadcrumb__list flex container">
+    <li><a href="index.html" class="breadcrumb__link">Home</a></li>
+    <li><span class="breadcrumb__link">></span></li>
+    <li>
+      <span class="breadcrumb__link" id="breadcrumbCategory">
+        Fashion
+      </span>
+    </li>
+    <li><span class="breadcrumb__link">></span></li>
+    <li>
+      <span class="breadcrumb__link" id="breadcrumbProduct">
+        Henley Shirt
+      </span>
+    </li>
+  </ul>
+</section>
 
       <!--=============== DETAILS ===============-->
-      <section class="details section--lg">
-        <div class="details__container container grid">
-          <div class="details__group">
-            <img
-              src="./assets/img/product-8-1.jpg"
-              alt=""
-              class="details__img"
-            />
-            <div class="details__small-images grid">
-              <img
-                src="./assets/img/product-8-2.jpg"
-                alt=""
-                class="details__small-img"
-              />
-              <img
-                src="./assets/img/product-8-1.jpg"
-                alt=""
-                class="details__small-img"
-              />
-              <img
-                src="./assets/img/product-8-2.jpg"
-                alt=""
-                class="details__small-img"
-              />
-            </div>
-          </div>
-          <div class="details__group">
-            <h3 class="details__title">Henley Shirt</h3>
-            <p class="details__brand">Brand: <span>adidas</span></p>
-            <div class="details__price flex">
-              <span class="new__price">$116</span>
-              <span class="old__price">$200.00</span>
-              <span class="save__price">25% Off</span>
-            </div>
-            <p class="short__description">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Voluptate, fuga. Quo blanditiis recusandae facere nobis cum optio,
-              inventore aperiam placeat, quis maxime nam officiis illum? Optio
-              et nisi eius, inventore impedit ratione sunt, cumque, eligendi
-              asperiores iste porro non error?
-            </p>
-            <ul class="products__list">
-              <li class="list__item flex">
-                <i class="fi-rs-crown"></i> 1 Year Al Jazeera Brand Warranty
-              </li>
-              <li class="list__item flex">
-                <i class="fi-rs-refresh"></i> 30 Days Return Policy
-              </li>
-              <li class="list__item flex">
-                <i class="fi-rs-credit-card"></i> Cash on Delivery available
-              </li>
-            </ul>
-            <div class="details__color flex">
-              <span class="details__color-title">Color</span>
-              <ul class="color__list">
-                <li>
-                  <a
-                    href="#"
-                    class="color__link"
-                    style="background-color: hsl(37, 100%, 65%)"
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="color__link"
-                    style="background-color: hsl(353, 100%, 65%)"
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="color__link"
-                    style="background-color: hsl(49, 100%, 60%)"
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="color__link"
-                    style="background-color: hsl(304, 100%, 78%)"
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="color__link"
-                    style="background-color: hsl(126, 61%, 52%)"
-                  ></a>
-                </li>
-              </ul>
-            </div>
-            <div class="details__size flex">
-              <span class="details__size-title">Size</span>
-              <ul class="size__list">
-                <li>
-                  <a href="#" class="size__link size-active">M</a>
-                </li>
-                <li>
-                  <a href="#" class="size__link">L</a>
-                </li>
-                <li>
-                  <a href="#" class="size__link">XL</a>
-                </li>
-                <li>
-                  <a href="#" class="size__link">XXL</a>
-                </li>
-              </ul>
-            </div>
-            <div class="details__action">
-              <input type="number" class="quantity" value="3" />
-              <a href="#" class="btn btn--sm">Add To Card</a>
-              <a href="#" class="details__action-btn">
-                <i class="fi fi-rs-heart"></i>
-              </a>
-            </div>
-            <ul class="details__meta">
-              <li class="meta__list flex"><span>SKU:</span>FWM15VKT</li>
-              <li class="meta__list flex">
-                <span>Tags:</span>Clothes, Women, Dress
-              </li>
-              <li class="meta__list flex">
-                <span>Availability:</span>8 Items in Stock
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+<section class="details section--lg">
+  <div class="details__container container grid">
+
+    <div class="details__group">
+
+      <img
+        src="./assets/img/product-8-1.jpg"
+        alt=""
+        class="details__img"
+        id="detailsMainImage"
+      />
+
+      <div
+        class="details__small-images grid"
+        id="detailsGallery"
+      >
+        <img
+          src="./assets/img/product-8-1.jpg"
+          class="details__small-img"
+        />
+      </div>
+
+    </div>
+
+    <div class="details__group">
+
+      <h3
+        class="details__title"
+        id="detailsTitle"
+      >
+        Henley Shirt
+      </h3>
+
+      <p class="details__brand">
+        Brand:
+        <span id="detailsBrand">Adidas</span>
+      </p>
+
+      <div class="details__price flex">
+
+        <span
+          class="new__price"
+          id="detailsPrice"
+        >
+          ₹1500
+        </span>
+
+        <span
+          class="old__price"
+          id="detailsOldPrice"
+        >
+          ₹2000
+        </span>
+
+        <span
+          class="save__price"
+          id="detailsDiscount"
+        >
+          25% Off
+        </span>
+
+      </div>
+
+      <p
+        class="short__description"
+        id="detailsDescription"
+      >
+        Product Description
+      </p>
+
+      <ul class="products__list">
+        <li class="list__item flex">
+          <i class="fi-rs-crown"></i>
+          1 Year Brand Warranty
+        </li>
+
+        <li class="list__item flex">
+          <i class="fi-rs-refresh"></i>
+          30 Days Return Policy
+        </li>
+
+        <li class="list__item flex">
+          <i class="fi-rs-credit-card"></i>
+          Cash on Delivery Available
+        </li>
+      </ul>
+
+      <div class="details__color flex">
+        <span class="details__color-title">Color</span>
+
+        <ul class="color__list">
+          <li>
+            <a
+              href="#"
+              class="color__link"
+              style="background-color:hsl(37,100%,65%)"
+            ></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="details__size flex">
+        <span class="details__size-title">
+          Size
+        </span>
+
+        <ul class="size__list">
+          <li>
+            <a
+              href="#"
+              class="size__link size-active"
+            >
+              M
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="details__action">
+
+        <input
+          type="number"
+          class="quantity"
+          value="1"
+          min="1"
+        />
+
+        <a href="#" class="btn btn--sm" id="addToCartBtn">
+    Add To Cart
+</a>
+
+        <a
+          href="#"
+          class="details__action-btn"
+        >
+          <i class="fi fi-rs-heart"></i>
+        </a>
+
+      </div>
+
+      <ul class="details__meta">
+
+        <li class="meta__list flex">
+          <span>SKU:</span>
+          <span id="detailsSKU">
+            FWM15VKT
+          </span>
+        </li>
+
+        <li class="meta__list flex">
+          <span>Tags:</span>
+          <span id="detailsTags">
+            Clothes
+          </span>
+        </li>
+
+        <li class="meta__list flex">
+          <span>Availability:</span>
+          <span id="detailsStock">
+            8 Items in Stock
+          </span>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+</section>
 
       <!--=============== DETAILS TAB ===============-->
       <section class="details__tab container">
@@ -323,7 +375,7 @@
                   <p class="review__description">
                     Thank you, very fast shipping from Poland only 3days.
                   </p>
-                  <span class="review__date">December 4, 2022 at 3:12 pm</span>
+                  <span class="review__date">December 4, 2025 at 3:12 pm</span>
                 </div>
               </div>
               <div class="review__single">
@@ -346,7 +398,7 @@
                   <p class="review__description">
                     Great low price and works well
                   </p>
-                  <span class="review__date">August 23, 2022 at 19:45 pm</span>
+                  <span class="review__date">June 23, 2026 at 19:45 pm</span>
                 </div>
               </div>
               <div class="review__single">
@@ -449,12 +501,12 @@
                 <i class="fi fi-rs-star"></i>
               </div>
               <div class="product__price flex">
-                <span class="new__price">$238.85</span>
-                <span class="old__price">$245.8</span>
+                <span class="new__price">Rs.940</span>
+                <span class="old__price">Rs.1199</span>
               </div>
               <a
                 href="#"
-                class="action__btn cart__btn"
+                class="action__btn cart__btn" id="addToCartBtn"
                 aria-label="Add To Cart"
               >
                 <i class="fi fi-rs-shopping-bag-add"></i>
@@ -505,12 +557,12 @@
                 <i class="fi fi-rs-star"></i>
               </div>
               <div class="product__price flex">
-                <span class="new__price">$238.85</span>
-                <span class="old__price">$245.8</span>
+                <span class="new__price">Rs.940</span>
+                <span class="old__price">Rs.1199</span>
               </div>
               <a
                 href="#"
-                class="action__btn cart__btn"
+                class="action__btn cart__btn" id="addToCartBtn"
                 aria-label="Add To Cart"
               >
                 <i class="fi fi-rs-shopping-bag-add"></i>
@@ -561,12 +613,12 @@
                 <i class="fi fi-rs-star"></i>
               </div>
               <div class="product__price flex">
-                <span class="new__price">$238.85</span>
-                <span class="old__price">$245.8</span>
+                <span class="new__price">Rs.2699</span>
+                <span class="old__price">Rs.2999</span>
               </div>
               <a
                 href="#"
-                class="action__btn cart__btn"
+                class="action__btn cart__btn" id="addToCartBtn"
                 aria-label="Add To Cart"
               >
                 <i class="fi fi-rs-shopping-bag-add"></i>
@@ -617,12 +669,12 @@
                 <i class="fi fi-rs-star"></i>
               </div>
               <div class="product__price flex">
-                <span class="new__price">$238.85</span>
-                <span class="old__price">$245.8</span>
+                <span class="new__price">Rs.940</span>
+                <span class="old__price">Rs.1199</span>
               </div>
               <a
                 href="#"
-                class="action__btn cart__btn"
+                class="action__btn cart__btn" id="addToCartBtn"
                 aria-label="Add To Cart"
               >
                 <i class="fi fi-rs-shopping-bag-add"></i>
@@ -741,6 +793,9 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!--=============== MAIN JS ===============-->
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/product.js"></script>
+    <script src="assets/js/navbar.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

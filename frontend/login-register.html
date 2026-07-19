@@ -33,9 +33,9 @@
           <p class="header__alert-news">
             Super Values Deals - Save more coupons
           </p>
-          <a href="login-register.html" class="header__top-action">
-            Log In / Sign Up
-          </a>
+          <a href="login-register.html" class="header__top-action" id="topAuthLink">
+    Log In / Sign Up
+</a>
         </div>
       </div>
 
@@ -85,7 +85,7 @@
           </a>
           <a href="cart.html" class="header__action-btn" title="Cart">
             <img src="assets/img/icon-cart.svg" alt="" />
-            <span class="count">3</span>
+            <span class="count" id="cartCount">0</span>
           </a>
         </div>
       </nav>
@@ -107,48 +107,84 @@
         <div class="login-register__container container grid">
           <div class="login">
             <h3 class="section__title">Login</h3>
-            <form class="form grid">
-              <input
-                type="email"
-                placeholder="Your Email"
-                class="form__input"
-              />
-              <input
-                type="password"
-                placeholder="Your Password"
-                class="form__input"
-              />
-              <div class="form__btn">
-                <button class="btn">Login</button>
-              </div>
-            </form>
+            <form class="form grid" id="loginForm">
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Your Email"
+                    class="form__input"
+                  required/>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Your Password"
+                    class="form__input"
+                    required/>
+
+                <div class="form__btn">
+                    <button type="submit" class="btn">Login</button>
+                  </div>
+              </form>
           </div>
           <div class="register">
             <h3 class="section__title">Create an Account</h3>
-            <form class="form grid">
-              <input
-                type="text"
-                placeholder="Username"
-                class="form__input"
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                class="form__input"
-              />
-              <input
-                type="password"
-                placeholder="Your Password"
-                class="form__input"
-              />
-              <input
-                type="password"
-                placeholder="Confirm Password"
-                class="form__input"
-              />
-              <div class="form__btn">
-                <button class="btn">Submit & Register</button>
-              </div>
+            <form class="form grid" id="registerForm">
+
+  <input
+    type="text"
+    id="registerName"
+    placeholder="Full Name"
+    class="form__input"
+    required
+  />
+
+  <input
+    type="email"
+    id="registerEmail"
+    placeholder="Email Address"
+    class="form__input"
+    required
+  />
+
+  <input
+    type="tel"
+    id="registerPhone"
+    placeholder="Phone Number"
+    class="form__input"
+    required
+  />
+
+  <textarea
+    id="registerAddress"
+    placeholder="Address"
+    class="form__input"
+    rows="3"
+    required
+  ></textarea>
+
+  <input
+    type="password"
+    id="registerPassword"
+    placeholder="Password"
+    class="form__input"
+    required
+  />
+
+  <input
+    type="password"
+    id="confirmPassword"
+    placeholder="Confirm Password"
+    class="form__input"
+    required
+  />
+
+  <div class="form__btn">
+    <button type="submit" class="btn">
+      Create Account
+    </button>
+  </div>
+
             </form>
           </div>
         </div>
@@ -263,6 +299,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!--=============== MAIN JS ===============-->
+    <script src="assets/js/auth.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/navbar.js"></script>
   </body>
-</html>
+</html> 

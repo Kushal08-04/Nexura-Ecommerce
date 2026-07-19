@@ -27,7 +27,7 @@
       <div class="header__top">
         <div class="header__container container">
           <div class="header__contact">
-            <span>(+91) -  1860 267 6161</span>
+            <span>(+01) - 2345 - 6789</span>
             <span>Our location</span>
           </div>
           <p class="header__alert-news">
@@ -56,7 +56,9 @@
               <a href="shop.html" class="nav__link">Shop</a>
             </li>
             <li class="nav__item">
-              <a href="accounts.html" class="nav__link">My Account</a>
+              <a href="accounts.html" class="nav__link active-link"
+                >My Account</a
+              >
             </li>
             <li class="nav__item">
               <a href="compare.html" class="nav__link">Compare</a>
@@ -97,106 +99,161 @@
       <section class="breadcrumb">
         <ul class="breadcrumb__list flex container">
           <li><a href="index.html" class="breadcrumb__link">Home</a></li>
-          <li><span class="breadcrumb__link"></span>></li>
-          <li><span class="breadcrumb__link">Shop</span></li>
-          <li><span class="breadcrumb__link"></span>></li>
-          <li><span class="breadcrumb__link">Wishlist</span></li>
+          <li><span class="breadcrumb__link">></span></li>
+          <li><span class="breadcrumb__link">Account</span></li>
         </ul>
       </section>
 
-      <!--=============== WISHLIST ===============-->
-      <section class="wishlist section--lg container">
-        <div class="table__container">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Stock Status</th>
-                <th>Action</th>
-                <th>Rename</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <img
-                    src="./assets//img/product-1-2.jpg"
-                    alt=""
-                    class="table__img"
+      <!--=============== ACCOUNTS ===============-->
+      <section class="accounts section--lg">
+        <div class="accounts__container container grid">
+          <div class="account__tabs">
+            <p class="account__tab active-tab" data-target="#dashboard">
+              <i class="fi fi-rs-settings-sliders"></i> Dashboard
+            </p>
+            <p class="account__tab" data-target="#orders">
+              <i class="fi fi-rs-shopping-bag"></i> Orders
+            </p>
+            <p class="account__tab" data-target="#update-profile">
+              <i class="fi fi-rs-user"></i> Update Profile
+            </p>
+            <p class="account__tab" data-target="#address">
+              <i class="fi fi-rs-marker"></i> My Address
+            </p>
+            <p class="account__tab" data-target="#change-password">
+              <i class="fi fi-rs-settings-sliders"></i> Change Password
+            </p>
+            <p class="account__tab"><i class="fi fi-rs-exit"></i> Logout</p>
+          </div>
+          <div class="tabs__content">
+            <div class="tab__content active-tab" content id="dashboard">
+              <h3 class="tab__header">Hello Rosie</h3>
+              <div class="tab__body">
+                <p class="tab__description">
+                  From your account dashboard. you can easily check & view your
+                  recent order, manage your shipping and billing addresses and
+                  edit your password and account details
+                </p>
+              </div>
+            </div>
+            <div class="tab__content" content id="orders">
+              <h3 class="tab__header">Your Orders</h3>
+              <div class="tab__body">
+                <table class="placed__order-table">
+                  <thead>
+                    <tr>
+                      <th>Orders</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                      <th>Totals</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>#1357</td>
+                      <td>March 19, 2022</td>
+                      <td>Processing</td>
+                      <td>$125.00</td>
+                      <td><a href="#" class="view__order">View</a></td>
+                    </tr>
+                    <tr>
+                      <td>#2468</td>
+                      <td>June 29, 2022</td>
+                      <td>Completed</td>
+                      <td>$364.00</td>
+                      <td><a href="#" class="view__order">View</a></td>
+                    </tr>
+                    <tr>
+                      <td>#2366</td>
+                      <td>August 02, 2022</td>
+                      <td>Completed</td>
+                      <td>$280.00</td>
+                      <td><a href="#" class="view__order">View</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab__content" content id="update-profile">
+              <h3 class="tab__header">Update Profile</h3>
+              <div class="tab__body">
+                <form class="form grid">
+                  <input
+                    type="text"
+                    placeholder="Username"
+                    class="form__input"
                   />
-                </td>
-                <td>
-                  <h3 class="table__title">
-                    J.Crew Mercantile Women's Short-Sleeve
-                  </h3>
-                  <p class="table__description">
-                    Lorem ipsum dolor sit amet consectetur.
-                  </p>
-                </td>
-                <td>
-                  <span class="table__price">$110</span>
-                </td>
-                <td><span class="table__stock">In Stock</span></td>
-                <td><a href="#" class="btn btn--sm">Add to Cart</a></td>
-                <td><i class="fi fi-rs-trash table__trash"></i></td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="./assets//img/product-7-1.jpg"
-                    alt=""
-                    class="table__img"
+                  <div class="form__btn">
+                    <button class="btn btn--md">Save</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="tab__content" content id="address">
+              <h3 class="tab__header">Shipping Address</h3>
+              <div class="tab__body">
+                <address class="address">
+                  3522 Interstate <br />
+                  75 Business Spur, <br />
+                  Sault Ste. <br />
+                  Marie, Mi 49783
+                </address>
+                <p class="city">New York</p>
+                <a href="#" class="edit">Edit</a>
+              </div>
+            </div>
+            <div class="tab__content" content id="change-password">
+              <h3 class="tab__header">Change Password</h3>
+              <div class="tab__body">
+                <form class="form grid">
+                  <input
+                    type="password"
+                    placeholder="Current Password"
+                    class="form__input"
                   />
-                </td>
-                <td>
-                  <h3 class="table__title">Amazon Essentials Women's Tank</h3>
-                  <p class="table__description">
-                    Lorem ipsum dolor sit amet consectetur.
-                  </p>
-                </td>
-                <td>
-                  <span class="table__price">$110</span>
-                </td>
-                <td><span class="table__stock">In Stock</span></td>
-                <td><a href="#" class="btn btn--sm">Add to Cart</a></td>
-                <td><i class="fi fi-rs-trash table__trash"></i></td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="./assets//img/product-2-1.jpg"
-                    alt=""
-                    class="table__img"
+                  <input
+                    type="password"
+                    placeholder="New Password"
+                    class="form__input"
                   />
-                </td>
-                <td>
-                  <h3 class="table__title">
-                    Amazon Brand - Daily Ritual Women's Jersey
-                  </h3>
-                  <p class="table__description">
-                    Lorem ipsum dolor sit amet consectetur.
-                  </p>
-                </td>
-                <td>
-                  <span class="table__price">$110</span>
-                </td>
-                <td><span class="table__stock">In Stock</span></td>
-                <td><a href="#" class="btn btn--sm">Add to Cart</a></td>
-                <td><i class="fi fi-rs-trash table__trash"></i></td>
-              </tr>
-            </tbody>
-          </table>
+                  <input
+                    type="password"
+                    placeholder="Confirm Password"
+                    class="form__input"
+                  />
+                  <div class="form__btn">
+                    <button class="btn btn--md">Save</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-     <!--=============== FOOTER SEPERATOR===============-->
+      <!--=============== NEWSLETTER ===============-->
       <section class="newsletter section home__newsletter">
         <div class="newsletter__container container grid">
           <h3 class="newsletter__title flex">
-            
-          
+            <img
+              src="./assets/img/icon-email.svg"
+              alt=""
+              class="newsletter__icon"
+            />
+            Sign in to Newsletter
+          </h3>
+          <p class="newsletter__description">
+            ...and receive ₹250 coupon for first shopping.
+          </p>
+          <form action="" class="newsletter__form">
+            <input
+              type="text"
+              placeholder="Enter Your Email"
+              class="newsletter__input"
+            />
+            <button type="submit" class="newsletter__btn">Subscribe</button>
+          </form>
         </div>
       </section>
     </main>

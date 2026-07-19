@@ -1,10 +1,9 @@
 const productService = require("../services/productService");
 
-// GET /api/products
+// GET ALL PRODUCTS
 exports.getAllProducts = async (req, res) => {
     try {
-
-        const products = await productService.getProducts();
+        const products = await productService.getAllProducts();
 
         res.status(200).json({
             success: true,
@@ -22,12 +21,12 @@ exports.getAllProducts = async (req, res) => {
     }
 };
 
-// GET /api/products/:id
+// GET PRODUCT BY ID
 exports.getProductById = async (req, res) => {
 
     try {
 
-        const product = await productService.getProduct(req.params.id);
+        const product = await productService.getProductById(req.params.id);
 
         if (!product) {
 
@@ -54,7 +53,7 @@ exports.getProductById = async (req, res) => {
 
 };
 
-// POST /api/products
+// CREATE PRODUCT
 exports.createProduct = async (req, res) => {
 
     try {
@@ -78,7 +77,7 @@ exports.createProduct = async (req, res) => {
 
 };
 
-// PUT /api/products/:id
+// UPDATE PRODUCT
 exports.updateProduct = async (req, res) => {
 
     try {
@@ -99,7 +98,7 @@ exports.updateProduct = async (req, res) => {
 
         res.status(200).json({
             success: true,
-            message: "Product updated",
+            message: "Product updated successfully",
             data: product
         });
 
@@ -114,7 +113,7 @@ exports.updateProduct = async (req, res) => {
 
 };
 
-// DELETE /api/products/:id
+// DELETE PRODUCT
 exports.deleteProduct = async (req, res) => {
 
     try {
@@ -146,7 +145,7 @@ exports.deleteProduct = async (req, res) => {
 
 };
 
-// GET /api/products/search?q=shirt
+// SEARCH PRODUCTS
 exports.searchProducts = async (req, res) => {
 
     try {
@@ -172,7 +171,7 @@ exports.searchProducts = async (req, res) => {
 
 };
 
-// GET /api/products/category/:category
+// CATEGORY PRODUCTS
 exports.getCategoryProducts = async (req, res) => {
 
     try {
@@ -198,7 +197,7 @@ exports.getCategoryProducts = async (req, res) => {
 
 };
 
-// GET /api/products/featured
+// FEATURED PRODUCTS
 exports.getFeaturedProducts = async (req, res) => {
 
     try {
@@ -222,31 +221,7 @@ exports.getFeaturedProducts = async (req, res) => {
 
 };
 
-// GET /api/products/new-arrivals
-exports.getNewArrivals = async (req, res) => {
-
-    try {
-
-        const products = await productService.getNewArrivals();
-
-        res.status(200).json({
-            success: true,
-            count: products.length,
-            data: products
-        });
-
-    } catch (error) {
-
-        res.status(500).json({
-            success: false,
-            message: error.message
-        });
-
-    }
-
-};
-
-// GET /api/products/deals
+// DEAL PRODUCTS
 exports.getDeals = async (req, res) => {
 
     try {
@@ -270,7 +245,31 @@ exports.getDeals = async (req, res) => {
 
 };
 
-// GET /api/products/best-sellers
+// NEW ARRIVALS
+exports.getNewArrivals = async (req, res) => {
+
+    try {
+
+        const products = await productService.getNewArrivals();
+
+        res.status(200).json({
+            success: true,
+            count: products.length,
+            data: products
+        });
+
+    } catch (error) {
+
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+
+    }
+
+};
+
+// BEST SELLERS
 exports.getBestSellers = async (req, res) => {
 
     try {
@@ -294,30 +293,47 @@ exports.getBestSellers = async (req, res) => {
 
 };
 
-exports.getProductsAdvanced = async (req, res) => {
+// HOME PAGE API
+exports.getHomeProducts = async (req, res) => {
 
     try {
 
-        const products = await productService.advancedSearch(req.query);
+        const data = await productService.getHomeProducts();
 
         res.status(200).json({
-
             success: true,
-
-            count: products.length,
-
-            data: products
-
+            data
         });
 
     } catch (error) {
 
         res.status(500).json({
-
             success: false,
-
             message: error.message
+        });
 
+    }
+
+};
+
+// ADVANCED FILTER
+exports.filterProducts = async (req, res) => {
+
+    try {
+
+        const products = await productService.filterProducts(req.query);
+
+        res.status(200).json({
+            success: true,
+            count: products.length,
+            data: products
+        });
+
+    } catch (error) {
+
+        res.status(500).json({
+            success: false,
+            message: error.message
         });
 
     }

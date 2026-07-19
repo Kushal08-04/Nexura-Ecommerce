@@ -27,15 +27,15 @@
       <div class="header__top">
         <div class="header__container container">
           <div class="header__contact">
-            <span>(+01) - 2345 - 6789</span>
+            <span>(+91) -  1860 267 6161</span>
             <span>Our location</span>
           </div>
           <p class="header__alert-news">
             Super Values Deals - Save more coupons
           </p>
-          <a href="login-register.html" class="header__top-action">
-            Log In / Sign Up
-          </a>
+          <a href="login-register.html" class="header__top-action" id="topAuthLink">
+    Log In / Sign Up
+</a>
         </div>
       </div>
 
@@ -62,9 +62,9 @@
               <a href="compare.html" class="nav__link active-link">Compare</a>
             </li>
             <li class="nav__item">
-              <a href="login-register.html" class="nav__link"
-                >Login</a
-              >
+              <a href="login-register.html" class="nav__link" id="navAuthLink">
+    Login
+</a>
             </li>
           </ul>
           <div class="header__search">
@@ -85,7 +85,7 @@
           </a>
           <a href="cart.html" class="header__action-btn" title="Cart">
             <img src="assets/img/icon-cart.svg" alt="" />
-            <span class="count">3</span>
+            <span class="count" id="cartCount">0</span>
           </a>
         </div>
       </nav>
@@ -139,9 +139,9 @@
           </tr>
           <tr>
             <th>Price</th>
-            <td><span class="table__price">$35</span></td>
-            <td><span class="table__price">$67</span></td>
-            <td><span class="table__price">$24</span></td>
+            <td><span class="table__price">Rs.1100</span></td>
+            <td><span class="table__price">Rs.1100</span></td>
+            <td><span class="table__price">Rs.1100</span></td>
           </tr>
           <tr>
             <th>Description</th>
@@ -384,6 +384,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!--=============== MAIN JS ===============-->
+    <script src="assets/js/navbar.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

@@ -32,6 +32,9 @@ exports.register = async(req,res)=>{
 
         });
 
+        const userData = user.toObject();
+        delete userData.password;
+
         const token=jwt.sign(
 
             {
@@ -49,12 +52,12 @@ exports.register = async(req,res)=>{
 
         res.status(201).json({
 
-            success:true,
-            message:"Registration Successful",
+            success: true,
+            message: "Registration Successful",
 
             token,
 
-            user
+            user: userData
 
         });
 
@@ -115,12 +118,14 @@ exports.login = async (req, res) => {
                 expiresIn: "7d"
             }
         );
+        const userData = user.toObject();
+        delete userData.password;
 
         res.status(200).json({
             success: true,
             message: "Login Successful",
             token,
-            user
+            user: userData
         });
 
     } catch (error) {

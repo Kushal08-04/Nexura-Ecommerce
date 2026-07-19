@@ -1,109 +1,103 @@
 const repository = require("../repositories/productRepository");
-
-exports.getProducts = () =>
-    repository.getAllProducts();
-
-exports.getProduct = (id) =>
-    repository.getProductById(id);
-
 const slugify = require("slugify");
 
+// Get All Products
+exports.getAllProducts = async () => {
+    return await repository.getAllProducts();
+};
+
+// Get Product By ID
+exports.getProductById = async (id) => {
+    return await repository.getProductById(id);
+};
+
+// Create Product
 exports.createProduct = async (data) => {
 
-    const existing = await repository.searchProducts(data.name);
-
-    if (
-        existing.length &&
-        existing[0].name.toLowerCase() === data.name.toLowerCase()
-    ) {
-
-        throw new Error("Product already exists");
-
-    }
-
+    // Generate slug
     data.slug = slugify(data.name, {
-
         lower: true,
-
         strict: true
-
     });
 
+    // Calculate final price
     data.finalPrice =
+        data.price - (data.price * (data.discount || 0)) / 100;
 
-        data.price -
-
-        (data.price * (data.discount || 0)) / 100;
-
+    // Generate SKU
     data.sku =
-
         "NXR-" +
+        Math.random().toString(36).substring(2, 8).toUpperCase();
 
-        Math.random()
-
-            .toString(36)
-
-            .substring(2, 8)
-
-            .toUpperCase();
-
-    return repository.createProduct(data);
-
+    return await repository.createProduct(data);
 };
 
+// Update Product
 exports.updateProduct = async (id, data) => {
 
-    if (
-        data.price &&
-        data.discount !== undefined
-    ) {
+    // Recalculate final price if needed
+    if (data.price !== undefined) {
+
+        const discount = data.discount || 0;
 
         data.finalPrice =
+            data.price - (data.price * discount) / 100;
+    }
 
-            data.price -
+    // Update slug if product name changes
+    if (data.name) {
 
-            (data.price * data.discount) / 100;
+        data.slug = slugify(data.name, {
+            lower: true,
+            strict: true
+        });
 
     }
 
-    return repository.updateProduct(id, data);
-
+    return await repository.updateProduct(id, data);
 };
 
-exports.deleteProduct = (id) =>
-    repository.deleteProduct(id);
+// Delete Product
+exports.deleteProduct = async (id) => {
+    return await repository.deleteProduct(id);
+};
 
-exports.searchProducts = (keyword) =>
-    repository.searchProducts(keyword);
+// Search Products
+exports.searchProducts = async (keyword) => {
+    return await repository.searchProducts(keyword);
+};
 
-exports.getCategoryProducts = (category) =>
-    repository.getProductsByCategory(category);
+// Category Products
+exports.getCategoryProducts = async (category) => {
+    return await repository.getCategoryProducts(category);
+};
 
-exports.getFeaturedProducts = () =>
-    repository.getFeaturedProducts();
+// Featured
+exports.getFeaturedProducts = async () => {
+    return await repository.getFeaturedProducts();
+};
 
-exports.getNewArrivals = () =>
-    repository.getNewArrivals();
+// Deals
+exports.getDeals = async () => {
+    return await repository.getDeals();
+};
 
-exports.getDeals = () =>
-    repository.getDeals();
+// New Arrivals
+exports.getNewArrivals = async () => {
+    return await repository.getNewArrivals();
+};
 
-exports.getBestSellers = () =>
-    repository.getBestSellers();
+// Best Sellers
+exports.getBestSellers = async () => {
+    return await repository.getBestSellers();
+};
 
-exports.advancedSearch = (query) =>
-    repository.advancedSearch(query);
+// Home Page
+exports.getHomeProducts = async () => {
+    return await repository.getHomeProducts();
+};
 
-exports.searchProducts
-
-exports.getCategoryProducts
-
-exports.getFeaturedProducts
-
-exports.getNewArrivals
-
-exports.getDeals
-
-exports.getBestSellers
-
-exports.advancedSearch
+// Advanced Filter
+exports.filterProducts = async (query) => {
+    return await repository.filterProducts(query);
+};

@@ -1,12 +1,12 @@
 require("dotenv").config();
-const mongoose = require("mongoose");
+const connectDB = require("../src/config/db");
 
 const Product = require("../src/models/Product");
 const products = require("./products");
 
 const seedDatabase = async () => {
     try {
-        await mongoose.connect(process.env.MONGO_URI);
+        await connectDB();
 
         console.log("✅ MongoDB Connected");
 

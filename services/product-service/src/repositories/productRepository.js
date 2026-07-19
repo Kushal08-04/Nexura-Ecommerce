@@ -1,109 +1,121 @@
 const Product = require("../models/Product");
 
-//apiFeatures
-const APIFeatures = require("../utils/apiFeatures");
-
 // Get all products
-const getAllProducts = (query = {}) => Product.find(query);
+exports.getAllProducts = async () => {
+    return await Product.find();
+};
 
-// Get by ID
-const getProductById = (id) => Product.findById(id);
+// Get product by ID
+exports.getProductById = async (id) => {
+    return await Product.findById(id);
+};
 
-// Create
-const createProduct = (data) => Product.create(data);
+// Create product
+exports.createProduct = async (productData) => {
+    return await Product.create(productData);
+};
 
-// Update
-const updateProduct = (id, data) =>
-    Product.findByIdAndUpdate(id, data, { new: true });
-
-// Delete
-const deleteProduct = (id) =>
-    Product.findOneAndDelete({
-    _id: id
-});
-
-// Search
-const searchProducts = (keyword) =>
-    Product.find({
-        name: {
-            $regex: keyword,
-            $options: "i"
-        }
+// Update product
+exports.updateProduct = async (id, data) => {
+    return await Product.findByIdAndUpdate(id, data, {
+        new: true,
+        runValidators: true,
     });
+};
+
+// Delete product
+exports.deleteProduct = async (id) => {
+    return await Product.findByIdAndDelete(id);
+};
+
+// Search products
+exports.searchProducts = async (keyword) => {
+    return await Product.find({
+        $or: [
+            { name: { $regex: keyword, $options: "i" } },
+            { category: { $regex: keyword, $options: "i" } },
+            { brand: { $regex: keyword, $options: "i" } }
+        ]
+    });
+};
 
 // Category
-const getProductsByCategory = (category) =>
-    Product.find({
-        category: category
-    });
+exports.getCategoryProducts = async (category) => {
+    return await Product.find({ category });
+};
 
 // Featured
-const getFeaturedProducts = () =>
-    Product.find({
-        featured: true
-    });
-
-// New Arrivals
-const getNewArrivals = () =>
-    Product.find({
-        newArrival: true
-    });
+exports.getFeaturedProducts = async () => {
+    return await Product.find({ featured: true });
+};
 
 // Deals
-const getDeals = () =>
-    Product.find({
-        dealOfTheDay: true
-    });
+exports.getDeals = async () => {
+    return await Product.find({ dealOfTheDay: true });
+};
+
+// New Arrivals
+exports.getNewArrivals = async () => {
+    return await Product.find({ newArrival: true });
+};
 
 // Best Sellers
-const getBestSellers = () =>
-    Product.find({
-        bestSeller: true
-    });
+exports.getBestSellers = async () => {
+    return await Product.find({ bestSeller: true });
+};
 
-//advancedSearch
-const advancedSearch = (queryString) => {
+// Home Page
+exports.getHomeProducts = async () => {
 
-    const apiFeature = new APIFeatures(
+    return {
+        featured: await Product.find({ featured: true }).limit(8),
 
-        Product.find(),
+        deals: await Product.find({ dealOfTheDay: true }).limit(8),
 
-        queryString
+        newArrivals: await Product.find({ newArrival: true }).limit(8),
 
-    )
-        .search()
-        .filter()
-        .sort()
-        .paginate();
-
-    return apiFeature.query;
+        bestSellers: await Product.find({ bestSeller: true }).limit(8)
+    };
 
 };
 
-module.exports = {
+// Advanced Filter
+exports.filterProducts = async (query) => {
 
-    getAllProducts,
+    let filter = {};
 
-    getProductById,
+    if (query.category)
+        filter.category = query.category;
 
-    createProduct,
+    if (query.featured === "true")
+        filter.featured = true;
 
-    updateProduct,
+    if (query.bestSeller === "true")
+        filter.bestSeller = true;
 
-    deleteProduct,
+    if (query.newArrival === "true")
+        filter.newArrival = true;
 
-    searchProducts,
+    if (query.dealOfTheDay === "true")
+        filter.dealOfTheDay = true;
 
-    getProductsByCategory,
+    if (query.minPrice || query.maxPrice) {
 
-    getFeaturedProducts,
+        filter.finalPrice = {};
 
-    getNewArrivals,
+        if (query.minPrice)
+            filter.finalPrice.$gte = Number(query.minPrice);
 
-    getDeals,
+        if (query.maxPrice)
+            filter.finalPrice.$lte = Number(query.maxPrice);
 
-    getBestSellers,
+    }
 
-    advancedSearch
+    let products = Product.find(filter);
+
+    if (query.sort)
+        products = products.sort(query.sort);
+
+    return await products;
 
 };
